@@ -53,5 +53,10 @@ public class ContactResource {
     }
 
     //GET	/contacts/call-list	Get a call list (see detailed requirements in item #4 below)
+    /*
+    4.	The call list is generated from all contacts that include a home phone.
+    It is sorted first by the contact’s last name, then by first name, and
+    returned as an array of objects that each have the following JSON format:
+     */
 
 }
