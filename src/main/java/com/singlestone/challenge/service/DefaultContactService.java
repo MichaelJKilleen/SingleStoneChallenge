@@ -35,4 +35,9 @@ public class DefaultContactService implements ContactService {
     public Optional<Contact> findById(Long id) {
         return contactRepository.findById(id);
     }
+
+    @Override
+    public void deleteContact(Long id) {
+        contactRepository.deleteById(id);
+    }
 }

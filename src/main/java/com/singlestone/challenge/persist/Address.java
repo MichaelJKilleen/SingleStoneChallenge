@@ -1,6 +1,7 @@
 package com.singlestone.challenge.persist;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
 public class Address {
@@ -10,19 +11,19 @@ public class Address {
     private String zip;
 
     public String getStreet() {
-        return street;
+        return Objects.requireNonNullElse(street,"");
     }
 
     public String getCity() {
-        return city;
+        return Objects.requireNonNullElse(city,"");
     }
 
     public String getState() {
-        return state;
+        return Objects.requireNonNullElse(state,"");
     }
 
     public String getZip() {
-        return zip;
+        return Objects.requireNonNullElse(zip,"");
     }
 
     public void setStreet(String street) {

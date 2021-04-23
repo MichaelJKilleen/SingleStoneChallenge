@@ -13,4 +13,6 @@ public interface ContactService {
     Contact updateContact(Long id, Contact body);
 
     Optional<Contact> findById(Long id);
+
+    void deleteContact(Long id);
 }

@@ -1,6 +1,7 @@
 package com.singlestone.challenge.persist;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class Phone {
@@ -23,7 +24,7 @@ public class Phone {
     }
 
     public String getNumber() {
-        return number;
+        return Objects.requireNonNullElse(number,"");
     }
 
     public void setNumber(String number) {
@@ -31,7 +32,7 @@ public class Phone {
     }
 
     public String getType() {
-        return type;
+        return Objects.requireNonNullElse(type,"");
     }
 
     public void setType(String type) {

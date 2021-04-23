@@ -1,7 +1,9 @@
 package com.singlestone.challenge.persist;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Contact {
@@ -29,7 +31,7 @@ public class Contact {
     }
 
     public Name getName() {
-        return name;
+        return Objects.requireNonNullElse(name,new Name());
     }
 
     public void setName(Name name) {
@@ -37,7 +39,7 @@ public class Contact {
     }
 
     public Address getAddress() {
-        return address;
+        return Objects.requireNonNullElse(address,new Address());
     }
 
     public void setAddress(Address address) {
@@ -45,7 +47,7 @@ public class Contact {
     }
 
     public String getEmail() {
-        return email;
+        return Objects.requireNonNullElse(email,"");
     }
 
     public void setEmail(String email) {
@@ -53,7 +55,7 @@ public class Contact {
     }
 
     public List<Phone> getPhone() {
-        return phone;
+        return Objects.requireNonNullElse(phone, Collections.EMPTY_LIST);
     }
 
     public void setPhone(List<Phone> phone) {

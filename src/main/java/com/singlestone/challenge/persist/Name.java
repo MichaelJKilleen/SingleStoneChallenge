@@ -1,6 +1,7 @@
 package com.singlestone.challenge.persist;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
 public class Name {
@@ -9,15 +10,15 @@ public class Name {
     private String last;
 
     public String getFirst() {
-        return first;
+        return Objects.requireNonNullElse(first,"");
     }
 
     public String getMiddle() {
-        return middle;
+        return Objects.requireNonNullElse(middle,"");
     }
 
     public String getLast() {
-        return last;
+        return Objects.requireNonNullElse(last,"");
     }
 
     public void setFirst(String first) {
