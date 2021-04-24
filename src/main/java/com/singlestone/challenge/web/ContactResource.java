@@ -58,6 +58,12 @@ public class ContactResource {
         return ResponseEntity.status(204).build();
 
     }
+
+    @GetMapping("/contacts/call-list")
+    public ResponseEntity<List<Contact>> getCallableContacts() {
+        List<Contact> contacts = contactService.findCallable();
+        return ResponseEntity.ok(contacts);
+    }
     //GET	/contacts/call-list	Get a call list (see detailed requirements in item #4 below)
     /*
     4.	The call list is generated from all contacts that include a home phone.

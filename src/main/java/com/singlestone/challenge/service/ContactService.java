@@ -15,4 +15,6 @@ public interface ContactService {
     Optional<Contact> findById(Long id);
 
     void deleteContact(Long id);
+
+    List<Contact> findCallable();
 }

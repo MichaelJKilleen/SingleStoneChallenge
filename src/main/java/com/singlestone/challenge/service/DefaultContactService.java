@@ -2,6 +2,7 @@ package com.singlestone.challenge.service;
 
 import com.singlestone.challenge.persist.Contact;
 import com.singlestone.challenge.persist.ContactRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,5 +40,11 @@ public class DefaultContactService implements ContactService {
     @Override
     public void deleteContact(Long id) {
         contactRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Contact> findCallable() {
+        List<Contact> callableContactacts =contactRepository.findByCallable(Sort.by("name.last").and(Sort.by("name.first")));
+        return callableContactacts;
     }
 }
